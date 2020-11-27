@@ -3,7 +3,7 @@
     <%= link_to current_user.name , edit_user_path(current_user) %>
   </div>
   <div class="create-room">
-    <%= link_to "チャットを作成する", new_room_path %>
+    <%= link_to "チャット作成", new_room_path %>
   </div>
 </div>
 
@@ -12,6 +12,7 @@
     <div class="room">
       <div class="room-name">
         <%= link_to room.name, room_messages_path(room) %>
+        <%= link_to '編集', edit_room_path(room.id), method: :get ,class:"room-edit"%>
       </div>
     </div>
   <% end %>

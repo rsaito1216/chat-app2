@@ -7,4 +7,6 @@ class Message < ApplicationRecord
   def was_attached?
     self.image.attached?
   end
+
+  default_scope -> { order(created_at: :desc) }
 end

@@ -3,13 +3,13 @@
 }
 .side-bar {
   background-color: #253141;
-  width: 300px;
+  width: 250px;
   height: 100vh;
 }
 .side-bar-header {
-  height: 100px;
+  height: 70px;
   padding: 0 20px;
-  background-color: #253141;
+  background-color: #1d2836;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -22,18 +22,18 @@
 }
 
 .create-room {
-  font-size: 10px;
+  font-size: 13px;
 }
 
 .create-room a {
   border: 1px solid lightblue;
-  padding: 14px;
+  padding: 8px;
   color: deepskyblue;
   text-decoration: none;
 }
 .rooms {
   background-color: #2F3E51;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 70px);
   padding: 0 20px;
   overflow: scroll;
 }
@@ -47,63 +47,83 @@
 }
 .chat {
   background-color: #ffffff;
-  width: calc(100% - 300px);
+  width: calc(100% - 250px);
 }
 .chat-header {
-  height: 100px;
+  height: 70px;
   padding: 0 40px;
   display: flex;
   justify-content: space-between;
+  background-color: #c4b5b5;
 }
 .header-title {
   color: #333;
   font-size: 24px;
-  margin-top: 36px;
+  margin-top: 17px;
 }
 
 .header-button {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 .header-button a {
   text-decoration: none;
   border: 1px solid darkred;
   color: darkred;
-  padding: 20px;
+  padding: 10px;
 }
 .messages {
-  background-color: #FAFAFA;
-  height: calc(100vh - 100px - 90px);
-  padding: 46px 40px 0;
+  background-color: #37c249;
+  height: calc(100vh - 70px - 90px);
+  padding: 15px 20px 0;
   overflow: scroll;
+  display: block; /* ブロックレベル要素化する */
+
 }
 .message {
-  margin: 10px 0;
-}
+  margin: 15px 0;
+  line-height: 35px; /* 行の高さを指定する */
+  padding-left: 15px; /* ラベル内左側の余白を指定する */
+  padding-right: 15px; /* ラベル内右側の余白を指定する */
+  cursor: pointer; /* マウスカーソルの形（リンクカーソル）を指定する */
+  background-color: rgb(216, 196, 207); /* フォントの色を指定 */
+  border: 2px solid #006DD9;/* ラベルの境界線を実線で指定する */
+  border-radius: 10px; /* 角丸を指定する */
+  }
 
 .upper-message{
   display: flex;
+  margin-top: 10px;
 }
 
 .message-user {
-  color: #434a54;
-  font-size: 16px;
+  color:brown;
+  font-size: 22px;
 }
 
 .message-date {
   color: #999;
-  font-size: 12px;
+  font-size: 14px;
   padding-left: 10px;
 }
 
 .lower-message {
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .message-content {
   color: #434a54;
-  font-size: 14px;
-  margin-bottom: 40px;
+  font-size: 18px;
+  margin-bottom: 10px;
+  white-space: pre-line;
+  margin: 15px opx; /* ラベル外側の余白を指定する */
+  line-height: 35px; /* 行の高さを指定する */
+  padding-left: 15px; /* ラベル内左側の余白を指定する */
+  padding-right: 15px; /* ラベル内右側の余白を指定する */
+  cursor: pointer; /* マウスカーソルの形（リンクカーソル）を指定する */
+  background-color: white; /* フォントの色を指定 */
+  border: 2px solid #006DD9;/* ラベルの境界線を実線で指定する */
+  border-radius: 10px; /* 角丸を指定する */
 }
 .form {
   background-color: #DDDDDD;
@@ -143,8 +163,33 @@
   width: 60px;
   margin: 5px 10px;
   text-align: center;
+  
 }
 
 .hidden {
   display: none;
 }
+
+.form-check-label {
+  color: yellowgreen
+}
+
+.comment-destroy {
+  background:rgba(255,0,0,0.5);
+  text-align:center;
+  padding:7px 0;
+}
+
+input[type="checkbox"]: checkbox {
+  background: #31A9EE;/* マウス選択時の背景色を指定する */
+  color: #ffffff; /* マウス選択時のフォント色を指定する */
+  }
+
+  .message-image{
+  padding-left: 15px; /* ラベル内左側の余白を指定する */
+  padding-right: 15px; /* ラベル内右側の余白を指定する */
+  cursor: pointer; /* マウスカーソルの形（リンクカーソル）を指定する */
+  background-color: white; /* フォントの色を指定 */
+  border: 2px solid #006DD9;/* ラベルの境界線を実線で指定する */
+  border-radius: 10px; /* 角丸を指定する */
+  }

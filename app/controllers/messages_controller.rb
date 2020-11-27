@@ -3,6 +3,7 @@ class MessagesController < ApplicationController
     @message = Message.new
     @room = Room.find(params[:room_id])
     @messages = @room.messages.includes(:user)
+    @users = User.all
   end
 
   def create
@@ -14,6 +15,13 @@ class MessagesController < ApplicationController
       @messages = @room.messages.includes(:user)
       render :index
     end
+  end
+
+  def destroy
+    @room = Room.find(params[:room_id])
+    message = Message.find_by(room_id: params[:room_id],id: params[:id])
+    message.destroy
+    redirect_to room_messages_path(@room)
   end
 
   private
