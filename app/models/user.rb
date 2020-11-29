@@ -6,8 +6,10 @@ class User < ApplicationRecord
 
   validates :name, presence: true
 
-  has_many :room_users
-  has_many :rooms, through: :room_users
-  has_many :messages
+  has_many :room_users, dependent: :destroy
+  has_many :rooms, through: :room_users, dependent: :destroy
+  has_many :messages, dependent: :destroy
+  has_many :reads, dependent: :destroy
+  has_many :read_messages, through: :reads, source: :message
 
 end

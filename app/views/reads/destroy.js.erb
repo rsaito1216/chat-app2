@@ -1,0 +1,1 @@
+$("#read-<%= @message.id %>").html("<%= j(render partial: 'reads/read', locals: { message: @message }) %>");

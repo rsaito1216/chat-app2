@@ -1,0 +1,5 @@
+   <h2>了解した人：</h2>
+            <% @reads.each do |read| %>
+              <span class='star-count'><%= read.user.name %> / </span>
+            <% end %>
+            <%= link_to '戻る', :back, class: 'btn'%>
