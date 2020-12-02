@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   get 'reads/create'
   get 'reads/destroy'
   get 'reads/show'
-  devise_for :users
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'
+  }
   root to: "rooms#index"
   resources :users, only: [:edit, :update]
   resources :rooms, only: [:new, :create, :destroy, :edit, :update] do

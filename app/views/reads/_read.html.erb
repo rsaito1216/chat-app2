@@ -1,6 +1,6 @@
 <% if user_signed_in? && !(current_user.id == message.user.id) %>
       <% if current_user.reads.find_by(message_id: message.id) %>
-                  <div class='star-btn'>
+            <div class='star-btn'>
                 <%= button_to '了解解除', message_reads_path(message,message.reads), method: :delete, remote: true, class: "btn-gradient-unradius" %>
                 <%= link_to message_reads_path(message.id) do %>
                 <span class='star-count'> 了解人数： <%= message.reads.count %></span>

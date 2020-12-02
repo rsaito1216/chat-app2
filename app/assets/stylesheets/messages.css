@@ -82,7 +82,7 @@
 }
 .message {
   margin: 15px 0;
-  line-height: 35px; /* 行の高さを指定する */
+  line-height: 45px; /* 行の高さを指定する */
   padding-left: 15px; /* ラベル内左側の余白を指定する */
   padding-right: 15px; /* ラベル内右側の余白を指定する */
   cursor: pointer; /* マウスカーソルの形（リンクカーソル）を指定する */
@@ -93,7 +93,8 @@
 
 .upper-message{
   display: flex;
-  margin-top: 10px;
+  margin-top: 5px;
+  justify-content: space-between;
 }
 
 .message-user {
@@ -102,8 +103,8 @@
 }
 
 .message-date {
-  color: #999;
-  font-size: 14px;
+  color: rgb(151, 90, 90);
+  font-size: 16px;
   padding-left: 10px;
 }
 
@@ -112,18 +113,13 @@
 }
 
 .message-content {
-  color: #434a54;
-  font-size: 18px;
-  margin-bottom: 10px;
-  white-space: pre-line;
-  margin: 15px opx; /* ラベル外側の余白を指定する */
-  line-height: 35px; /* 行の高さを指定する */
-  padding-left: 15px; /* ラベル内左側の余白を指定する */
-  padding-right: 15px; /* ラベル内右側の余白を指定する */
-  cursor: pointer; /* マウスカーソルの形（リンクカーソル）を指定する */
-  background-color: white; /* フォントの色を指定 */
-  border: 2px solid #006DD9;/* ラベルの境界線を実線で指定する */
-  border-radius: 10px; /* 角丸を指定する */
+  color: #ffb340;
+  width: 100%;
+  padding: 3px 7px;
+  border: solid 2px #dedede;
+  resize: none;
+  background-color: white;
+  font-size: large;
 }
 .form {
   background-color: #DDDDDD;
@@ -202,9 +198,8 @@ input[type="checkbox"]: checkbox {
   color: #FFF;
   background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
   transition: .4s;
-  margin-right: 5px;
   align-items: center;
-    
+  margin-right: 10px;
 }
 
 .btn-gradient-unradius {
@@ -215,7 +210,7 @@ input[type="checkbox"]: checkbox {
   color: #FFF;
   background-image: linear-gradient(45deg, #362c0e 0%, #412012 100%);
   transition: .4s;
-  margin-right: 5px;
+  margin-right: 10px;
   align-items: center;
     
 }
@@ -225,5 +220,7 @@ input[type="checkbox"]: checkbox {
 }
 
 .star-count{
-  margin-right: 10px;
+  cursor: pointer;
+  font-size: medium;
+  font-weight: 500;
 }

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   
+
   def edit
   end
 
@@ -15,5 +16,11 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:name, :email)
+  end
+
+  def admin_user
+    if !(current_user.id == current_user.admin)
+      redirect_to root_path
+    end
   end
 end

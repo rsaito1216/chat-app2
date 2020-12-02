@@ -10,7 +10,7 @@ class MessagesController < ApplicationController
     @room = Room.find(params[:room_id])
     @message = @room.messages.new(message_params)
     if @message.save
-      redirect_to room_messages_path(@room)
+      ActionCable.server.broadcast 'message_channel', content: @message, user: @message.user, time: @message.created_at.strftime("%Y/%m/%d %H:%M")
     else
       @messages = @room.messages.includes(:user)
       render :index
