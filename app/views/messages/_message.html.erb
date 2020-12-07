@@ -18,11 +18,17 @@
             <%= simple_format(h message.content)%>
             
         </div>
-      <%= image_tag message.image.variant(resize:'500x500'), class: 'message-image' if message.image.attached?%>
+
     
-                <div id="read-<%= message.id %>">
-                <%= render 'reads/read',  message: message %>
-                </div>
+      <% message.images.each do |image| %>
+      <%= image_tag image.variant(resize:'500x500'), class: 'message-image'  %>
+    <%end%>
+    
+    
+      
+          <div id="read-<%= message.id %>">
+          <%= render 'reads/read',  message: message %>
+          </div>
     
   </div>
-  </div>
+</div>

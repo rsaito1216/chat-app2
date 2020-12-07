@@ -11,6 +11,10 @@
   </div>
 </div>
   <div class="messages">
+   参加メンバー：
+  <% @room.users.each do |user| %>
+              <%= user.name %> / 
+            <% end %>
         <% if @messages %>
           <div id='messages'>
             <% @messages.each do |message| %>
@@ -29,7 +33,7 @@
     <%= f.text_area :content, class: 'form-message', placeholder: 'メッセージを入力' %>
     <label class="form-image">
       <span class="image-file">画像</span>
-      <%= f.file_field :image, class: 'hidden' %>
+      <%= f.file_field :images, name: 'message[images][]', multiple: true,  id: 'message_image',class: 'hidden' %>
     </label>
   </div>
   <%= f.submit '送信', class: 'form-submit' %>

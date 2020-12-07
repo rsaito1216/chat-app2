@@ -13,6 +13,16 @@ consumer.subscriptions.create("MessageChannel", {
     const text = `<p>${data.content.content}</p>`;
     const createdAt = `<p>${data.time}</p>`;
     const Name = `<p>${data.user.name}</p>`;
+
+    document.getElementById('message_image').addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      const blob = window.URL.createObjectURL(file);
+
+      
+    
+    
+  });
+  const Image = `blob`;
     const HTML = `
     <div class="message">
       <div class="upper-message">
@@ -25,6 +35,9 @@ consumer.subscriptions.create("MessageChannel", {
       </div>
         <div class="message-content">
           <p>${text}</p>
+        </div>
+        <div class="message-image">
+        <img src="${Image}">
         </div>
      </div>
     `

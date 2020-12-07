@@ -8,10 +8,10 @@ Rails.application.routes.draw do
   root to: "rooms#index"
   resources :users, only: [:edit, :update]
   resources :rooms, only: [:new, :create, :destroy, :edit, :update] do
-    resources :messages, only: [:index, :create, :destroy, :edit, :update]
+    resources :messages, only: [:index, :create, :destroy]
   end
 
-  resources :messages, only: [:index, :create, :destroy, :edit, :update] do
+  resources :messages, only: [:index, :create, :destroy] do
     resource :reads, only: [:create, :destroy, :show]
   end
 

@@ -12,12 +12,13 @@ class ReadsController < ApplicationController
   end
 
   def show
-    @reads = Read.all
+    
   end
 
   private
 
   def set_message
+    @room = Room.find_by(id: params[:room_id])
     @message = Message.find_by(id: params[:message_id])
   end
 end
